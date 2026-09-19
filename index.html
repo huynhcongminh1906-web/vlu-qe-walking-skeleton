@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VLU Login - Walking Skeleton</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            width: 300px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h2>Đăng nhập</h2>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Tên đăng nhập"
+    >
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Mật khẩu"
+    >
+
+    <button onclick="handleLogin()">
+        Đăng nhập
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+<script src="login.js"></script>
+
+<script>
+
+    function handleLogin() {
+
+        const username =
+            document.getElementById('username').value;
+
+        const password =
+            document.getElementById('password').value;
+
+        const result = login(username, password);
+
+        const message =
+            document.getElementById('message');
+
+        if (result) {
+
+            message.innerText =
+                'Đăng nhập thành công!';
+
+        } else {
+
+            message.innerText =
+                'Sai tên đăng nhập hoặc mật khẩu!';
+
+        }
+    }
+
+</script>
+
+</body>
+</html>
